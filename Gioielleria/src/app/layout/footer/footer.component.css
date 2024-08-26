@@ -1,0 +1,110 @@
+.footer-container {
+    background-color: #f8f9fa;
+    padding: 20px 0; /* Ridotto il padding per rendere il footer più basso */
+    color: #333;
+  }
+  
+  .footer-logo {
+    max-width: 200px; /* Ridotto il logo */
+    margin-bottom: 10px; /* Ridotto il margine sotto il logo */
+  }
+  
+  .footer-social-icons a {
+    color: #333;
+    margin-right: 8px; /* Spaziatura ridotta tra le icone */
+    font-size: 16px; /* Ridotta la dimensione delle icone */
+  }
+  
+  .footer-links h5 {
+    font-weight: bold;
+    margin-bottom: 8px; /* Spaziatura ridotta */
+    font-size: 14px; /* Font ridotto per i titoli */
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 6px; /* Spaziatura ridotta tra gli elementi della lista */
+  }
+  
+  .footer-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px; /* Font ridotto per i link */
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .newsletter-section {
+    text-align: center; /* Allinea la sezione della newsletter a destra */
+  }
+  
+  .newsletter-section h5 {
+    font-weight: bold;
+    margin-bottom: 8px; /* Spaziatura ridotta */
+    font-size: 14px; /* Font ridotto */
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: flex-end; /* Allinea l'input e il bottone a destra */
+    margin-bottom: 10px; /* Spaziatura ridotta sotto la newsletter */
+  }
+  
+  .newsletter-form input {
+    border: 1px solid #ccc;
+    padding: 8px; /* Padding ridotto per l'input */
+    flex: 1;
+    border-radius: 3px 0 0 3px;
+    font-size: 14px; /* Font ridotto per l'input */
+  }
+  
+  .newsletter-form button {
+    padding: 8px; /* Padding ridotto per il bottone */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    font-size: 14px; /* Font ridotto per il bottone */
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #555;
+  }
+  
+  .shop-button {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 8px 15px; /* Padding ridotto per il bottone "Segui su shop" */
+    text-decoration: none;
+    border-radius: 20px; /* Leggero arrotondamento per un look più compatto */
+    font-size: 14px; /* Font ridotto */
+    margin-top: 8px; /* Spaziatura ridotta sopra il bottone */
+  }
+  
+  .shop-button:hover {
+    background-color: #554fcf;
+  }
+  
+  .country-selection {
+    margin-bottom: 8px; /* Spaziatura ridotta */
+    font-size: 14px; /* Font ridotto */
+  }
+  
+  .payment-methods img {
+    margin: 0 8px; /* Spaziatura ridotta tra i metodi di pagamento */
+    width: 40px; /* Dimensione ridotta delle icone di pagamento */
+    height: auto;
+  }
+  
+  .payment-methods img:last-child {
+    margin-right: 0;
+  }
+  
