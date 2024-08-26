@@ -1,0 +1,14 @@
+.splide {
+    margin-bottom: 50px; /* Aumenta o diminuisci questo valore a seconda dello spazio necessario */
+  }
+  @media (max-width: 768px) {
+    .splide {
+      height: auto; /* Assicura che l'altezza del carosello sia adeguata */
+    }
+  
+    .splide__slide img {
+      max-height: 150px; /* Adatta l'altezza delle immagini per dispositivi mobili */
+      object-fit: contain; /* Mantieni le proporzioni delle immagini */
+    }
+  }
+  
