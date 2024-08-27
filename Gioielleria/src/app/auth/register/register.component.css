@@ -1,0 +1,111 @@
+/* Container for the tabs and forms */
+.nav-pills {
+    margin-bottom: 1.5rem;
+  }
+  
+  .nav-pills .nav-link {
+    color: #555;
+    background-color: #f7f7f7;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #c0a16b;
+    color: white;
+  }
+  
+  .nav-pills .nav-link:hover {
+    background-color: #e2d1a6;
+    color: white;
+  }
+  
+  /* Form container */
+  .tab-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Limita la larghezza del modulo */
+    margin: 0 auto; /* Centra il modulo orizzontalmente */
+  }
+  
+  /* Form inputs */
+  .form-outline {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-outline input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-outline input:focus {
+    border-color: #c0a16b;
+    outline: none;
+  }
+  
+  .form-outline label {
+    margin-bottom: 0.5rem;
+    color: #666;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: #c0a16b;
+    border-color: #c0a16b;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #a7854d;
+    border-color: #a7854d;
+  }
+  
+  .btn-link {
+    color: #c0a16b;
+  }
+  
+  .btn-link:hover {
+    color: #a7854d;
+  }
+  
+  /* Checkbox */
+  .form-check-input {
+    margin-right: 0.5rem;
+  }
+  
+  .form-check-label {
+    color: #666;
+  }
+  
+  /* Social buttons */
+  .btn-floating {
+    color: #666;
+    font-size: 1.5rem;
+  }
+  
+  .btn-floating:hover {
+    color: #c0a16b;
+  }
+  
+  .text-center p {
+    margin-top: 1rem;
+    color: #666;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 576px) {
+    .nav-pills .nav-item {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  
+    .tab-content {
+      padding: 1.5rem;
+    }
+  }
+  

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { GaranzieComponent } from './home/garanzie/garanzie.component';
 import { CarouselgioielliComponent } from './home/carouselgioielli/carouselgioielli.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,15 @@ import { CarouselgioielliComponent } from './home/carouselgioielli/carouselgioie
     HomeComponent,
     CarouselComponent,
     GaranzieComponent,
-    CarouselgioielliComponent
+    CarouselgioielliComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
