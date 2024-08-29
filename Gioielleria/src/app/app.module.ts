@@ -10,6 +10,8 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { GaranzieComponent } from './home/garanzie/garanzie.component';
 import { CarouselgioielliComponent } from './home/carouselgioielli/carouselgioielli.component';
 import { AuthComponent } from './auth/auth.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { AuthComponent } from './auth/auth.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule  
+    RouterModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

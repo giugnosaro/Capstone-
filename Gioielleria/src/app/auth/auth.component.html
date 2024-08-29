@@ -1,56 +1,63 @@
+<!-- src/app/components/auth/auth.component.html -->
 <div class="container" id="container" #container>
-    <div class="form-container sign-up-container">
-      <form action="#">
-        <h1>Crea Account</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <span>
-          Oppure usa la tua email per la registrazione</span>
-        <input type="text" placeholder="Nome" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Registrati</button>
-      </form>
-    </div>
-    <div class="form-container sign-in-container">
-      <form action="#">
-        <h1>Accedi</h1>
-        <div class="social-container">
-          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <span>Oppure usa il tuo account</span>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <a href="#">Hai dimenticato la password?</a>
-        <button>Accedi</button>
-      </form>
-    </div>
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h1>Bentornato!</h1>
-          <p>Per rimanere in contatto con noi effettua il login con i tuoi dati personali</p>
-          <button class="ghost" id="signIn" #signInButton>Accedi</button>
-        </div>
-        <div class="overlay-panel overlay-right">
-          <h1>Ciao, amico!</h1>
-          <p>Inserisci i tuoi dati personali e inizia il tuo viaggio con noi</p>
-          <button class="ghost" id="signUp" #signUpButton>Iscrizione</button>
-        </div>
+  <!-- Sezione Registrazione -->
+  <div class="form-container sign-up-container">
+    <form (submit)="register(); $event.preventDefault()">
+      <h1>Crea Account</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>Oppure usa la tua email per la registrazione</span>
+      <input type="text" [(ngModel)]="nome" placeholder="Nome" name="name" required />
+      <input type="email" [(ngModel)]="email" placeholder="Email" name="email" required />
+      <input type="password" [(ngModel)]="password" placeholder="Password" name="password" required />
+      <button type="submit">Registrati</button>
+    </form>
+  </div>
+
+  <!-- Sezione Login -->
+  <div class="form-container sign-in-container">
+    <form (submit)="login(); $event.preventDefault()">
+      <h1>Accedi</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>Oppure usa il tuo account</span>
+      <input type="email" [(ngModel)]="email" placeholder="Email" name="loginEmail" required />
+      <input type="password" [(ngModel)]="password" placeholder="Password" name="loginPassword" required />
+      <a href="#">Hai dimenticato la password?</a>
+      <button type="submit">Accedi</button>
+    </form>
+  </div>
+
+  <!-- Overlay Panel: Accesso e Iscrizione -->
+  <div class="overlay-container" *ngIf="!isAuthenticated">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Bentornato!</h1>
+        <p>Per rimanere in contatto con noi effettua il login con i tuoi dati personali</p>
+        <button class="ghost" id="signIn" #signInButton>Accedi</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Ciao, amico!</h1>
+        <p>Inserisci i tuoi dati personali e inizia il tuo viaggio con noi</p>
+        <button class="ghost" id="signUp" #signUpButton>Iscrizione</button>
       </div>
     </div>
   </div>
-  
-  <footer>
-    <p>
-      Created with <i class="fa fa-heart"></i> by
-      <a target="_blank" href="https://florin-pop.com">Florin Pop</a> - Read how I created this and how you can join the challenge
-      <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-    </p>
-  </footer>
-  
+
+  <!-- Sezione Logout quando l'utente è autenticato -->
+  <div class="overlay-container" *ngIf="isAuthenticated">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Benvenuto!</h1>
+        <p>Sei autenticato con successo. Clicca il pulsante per uscire.</p>
+        <button class="ghost" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
