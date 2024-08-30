@@ -97,3 +97,103 @@
     color: hotpink !important; /* Colore speciale per SUMMER VIBES */
   }
   
+  /* Stile per il pulsante "Utente" */
+.top-social-icons .btn-primary {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.top-social-icons .btn-primary:hover {
+  color: #ff4081; /* Colore di hover */
+}
+
+/* Stile per il modale */
+.modal.show {
+  display: block; /* Mostra il modale */
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro semitrasparente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  margin: 10% auto;
+  max-width: 500px; /* Larghezza del modale */
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: none;
+}
+
+.btn-secondary,
+.btn-danger {
+  background-color: #ff4081; /* Colore pulsante */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover,
+.btn-danger:hover {
+  background-color: #e6376d; /* Colore hover pulsante */
+}
+
+.close {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff4081;
+}
+
