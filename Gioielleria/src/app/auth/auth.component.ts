@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { AuthService } from '../service/authservice/auth.component';
 import { catchError, of, tap } from 'rxjs';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-auth',
@@ -8,18 +10,25 @@ import { catchError, of, tap } from 'rxjs';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements AfterViewInit {
-  nome = '';
-  email = '';
-  password = '';
-  isAuthenticated = false;
+  nome: string = '';
+  email: string = '';
+  password: string = '';
+  role: string = 'User';
+  isAuthenticated: boolean = false;
+  toastMessage: string | null = null;
 
   // Riferimenti agli elementi del DOM
   @ViewChild('signUpButton') signUpButton!: ElementRef;
   @ViewChild('signInButton') signInButton!: ElementRef;
   @ViewChild('container') container!: ElementRef;
+
   
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    
+  ) {}
 
   ngAfterViewInit(): void {
     // Aggiungi gli event listener per i pulsanti
@@ -39,59 +48,87 @@ export class AuthComponent implements AfterViewInit {
     }
 
     this.authService
-      .register({ nome: this.nome, email: this.email, password: this.password })
+      .register({ nome: this.nome, email: this.email, password: this.password, role: this.role })
       .pipe(
         tap((response) => {
           console.log('Registrazione avvenuta con successo!', response);
-          this.resetForm();
           this.isAuthenticated = true;
+          this.showSuccessToast('Registrazione effettuata con successo!');
+          this.router.navigate(['/home']);
         }),
         catchError((error) => {
           console.error('Errore durante la registrazione', error);
-          // Mostra i dettagli completi dell'errore per capire meglio cosa sta succedendo
-          if (error.error && error.error.errors) {
-            console.log('Dettagli degli errori di validazione:', error.error.errors);
-            // Puoi aggiungere log specifici per ogni errore di validazione
-            Object.entries(error.error.errors).forEach(([key, value]) => {
-              console.log(`Errore sul campo ${key}: ${value}`);
-            });
-          }
-          return of(null); // Ritorna un Observable vuoto per continuare il flusso
+          this.showErrorToast('Errore durante la registrazione');
+          return of(null);
         })
       )
-      .subscribe();
+      .subscribe(); // Corretto: Assicurati di chiamare .subscribe()
   }
+  
+  
+
   login() {
-    // Logica per il login dell'utente
     if (!this.email || !this.password) {
-      console.error('Compila tutti i campi per il login');
+      console.error('Compila tutti i campi per l\'accesso');
       return;
     }
 
     this.authService
       .login({ email: this.email, password: this.password })
-      .subscribe(
-        (response) => {
-          console.log('Login avvenuto con successo!', response);
+      .pipe(
+        tap((response) => {
+          console.log('Accesso effettuato con successo!', response);
           this.isAuthenticated = true;
-        },
-        (error) => {
-          console.error('Errore durante il login', error);
-        }
-      );
+          this.showSuccessToast('Accesso effettuato con successo!');
+          this.router.navigate(['/home']);
+        }),
+        catchError((error) => {
+          console.error('Errore durante l\'accesso', error);
+          this.showErrorToast('Errore durante l\'accesso');
+          return of(null); 
+        })
+      )
+      .subscribe(); // Corretto: Assicurati di chiamare .subscribe()
   }
 
   logout() {
-    // Logica per il logout
-    this.authService.logout();
     this.isAuthenticated = false;
-    console.log('Logout effettuato');
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userRole');
+    this.showInfoToast('Logout effettuato con successo!', 'Arrivederci!');
+  }
+  showSuccessToast(message: string) {
+    Swal.fire({
+      icon: 'success',
+      title: message,
+      showConfirmButton: false,
+      timer: 2000
+    });
   }
 
+  showErrorToast(message: string) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Errore',
+      text: message,
+      showConfirmButton: true
+    });
+  }
+
+  showInfoToast(message: string, title: string) {
+    Swal.fire({
+      icon: 'info',
+      title: title,
+      text: message,
+      showConfirmButton: true
+    });
+  }
+  
   resetForm() {
     // Resetta i campi del form
     this.nome = '';
     this.email = '';
     this.password = '';
+    this.role = 'User';
   }
 }

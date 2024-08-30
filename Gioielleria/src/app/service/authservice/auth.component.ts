@@ -1,4 +1,4 @@
-// src/app/services/auth.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Metodo per registrare un nuovo utente
-  register(userData: { nome: string; email: string; password: string }): Observable<any> {
+  register(userData: { nome: string; email: string; password: string;  role: string}): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, userData);
   }
 
@@ -24,6 +24,7 @@ export class AuthService {
         // Salva il token nel localStorage
         if (response.token) {
           localStorage.setItem('authToken', response.token);
+          localStorage.setItem('userRole', response.role); // Salva il ruolo
         }
       })
     );

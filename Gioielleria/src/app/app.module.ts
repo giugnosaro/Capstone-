@@ -12,6 +12,8 @@ import { CarouselgioielliComponent } from './home/carouselgioielli/carouselgioie
 import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

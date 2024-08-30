@@ -1,4 +1,8 @@
 <!-- src/app/components/auth/auth.component.html -->
+<div *ngIf="toastMessage" class="toast">
+  {{ toastMessage }}
+</div>
+
 <div class="container" id="container" #container>
   <!-- Sezione Registrazione -->
   <div class="form-container sign-up-container">
@@ -13,6 +17,10 @@
       <input type="text" [(ngModel)]="nome" placeholder="Nome" name="name" required />
       <input type="email" [(ngModel)]="email" placeholder="Email" name="email" required />
       <input type="password" [(ngModel)]="password" placeholder="Password" name="password" required />
+      <select [(ngModel)]="role" name="role" required>
+        <option value="User">Utente</option>
+        <option value="Admin">Admin</option>
+      </select>
       <button type="submit">Registrati</button>
     </form>
   </div>
