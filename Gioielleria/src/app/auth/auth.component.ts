@@ -3,6 +3,7 @@ import { AuthService } from '../service/authservice/auth.component';
 import { catchError, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-auth',
@@ -16,6 +17,7 @@ export class AuthComponent implements AfterViewInit {
   role: string = 'User';
   isAuthenticated: boolean = false;
   toastMessage: string | null = null;
+  isProfileModalOpen: boolean = false;
 
   // Riferimenti agli elementi del DOM
   @ViewChild('signUpButton') signUpButton!: ElementRef;
@@ -24,10 +26,12 @@ export class AuthComponent implements AfterViewInit {
 
   
 
+  
+
   constructor(
     private authService: AuthService,
     private router: Router,
-    
+    private userService: UserService
   ) {}
 
   ngAfterViewInit(): void {
@@ -69,7 +73,7 @@ export class AuthComponent implements AfterViewInit {
 
   login() {
     if (!this.email || !this.password) {
-      console.error('Compila tutti i campi per l\'accesso');
+      console.error("Compila tutti i campi per l'accesso");
       return;
     }
 
@@ -78,23 +82,40 @@ export class AuthComponent implements AfterViewInit {
       .pipe(
         tap((response) => {
           console.log('Accesso effettuato con successo!', response);
-          this.isAuthenticated = true;
-          this.showSuccessToast('Accesso effettuato con successo!');
-          this.router.navigate(['/home']);
+
+          if (response && response.user) {
+            this.isAuthenticated = true;
+            this.nome = response.user.nome;
+            this.email = response.user.email;
+            this.role = response.user.role;
+            this.userService.setUser(response.user); // Utilizza correttamente il servizio
+            this.showSuccessToast('Accesso effettuato con successo!');
+            this.router.navigate(['/home']);
+          } else {
+            this.showErrorToast("Errore: Dati dell'utente non trovati.");
+          }
         }),
         catchError((error) => {
-          console.error('Errore durante l\'accesso', error);
+          console.error("Errore durante l'accesso", error);
           this.showErrorToast('Errore durante l\'accesso');
-          return of(null); 
+          return of(null);
         })
       )
-      .subscribe(); // Corretto: Assicurati di chiamare .subscribe()
+      .subscribe();
+  }
+  openProfileModal() {
+    this.isProfileModalOpen = true;
   }
 
+  // Funzione per chiudere il modale del profilo
+  closeProfileModal() {
+    this.isProfileModalOpen = false;
+  }
   logout() {
     this.isAuthenticated = false;
     localStorage.removeItem('authToken');
     localStorage.removeItem('userRole');
+    this.userService.clearUser();
     this.showInfoToast('Logout effettuato con successo!', 'Arrivederci!');
   }
   showSuccessToast(message: string) {

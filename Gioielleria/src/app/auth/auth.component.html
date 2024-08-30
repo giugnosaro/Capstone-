@@ -1,9 +1,52 @@
-<!-- src/app/components/auth/auth.component.html -->
+<!-- Messaggio Toast -->
 <div *ngIf="toastMessage" class="toast">
   {{ toastMessage }}
 </div>
 
 <div class="container" id="container" #container>
+  <!-- Sezione Navbar -->
+  <nav>
+    <div class="navbar-content">
+      <!-- Verifica se l'utente è autenticato -->
+      <div *ngIf="isAuthenticated; else loginLink">
+        <!-- Icona del profilo, cliccabile per aprire il modale del profilo -->
+        <a (click)="openProfileModal()" href="#" style="cursor: pointer;">
+          <i class="bi bi-person"></i> <!-- Icona dell'omino -->
+        </a>
+        <button class="ghost" (click)="logout()">Logout</button> <!-- Pulsante per fare il logout -->
+      </div>
+
+      <!-- Link per la registrazione/login -->
+      <ng-template #loginLink>
+        <!-- Mostra l'icona solo se l'utente non è autenticato -->
+        <a *ngIf="!isAuthenticated" [routerLink]="['/auth']"><i class="bi bi-person"></i> Registrati/Accedi</a>
+      </ng-template>
+    </div>
+  </nav>
+
+  <!-- Modale per Mostrare i Dati dell'Utente -->
+  <div class="modal" [ngClass]="{'show': isProfileModalOpen}" tabindex="-1" role="dialog" [style.display]="isProfileModalOpen ? 'block' : 'none'">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Profilo Utente</h5>
+          <button type="button" class="close" (click)="closeProfileModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Nome:</strong> {{ nome }}</p>
+          <p><strong>Email:</strong> {{ email }}</p>
+          <p><strong>Ruolo:</strong> {{ role }}</p>
+          <!-- Aggiungi altri dettagli dell'utente come necessario -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeProfileModal()">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Sezione Registrazione -->
   <div class="form-container sign-up-container">
     <form (submit)="register(); $event.preventDefault()">
@@ -18,7 +61,7 @@
       <input type="email" [(ngModel)]="email" placeholder="Email" name="email" required />
       <input type="password" [(ngModel)]="password" placeholder="Password" name="password" required />
       <select [(ngModel)]="role" name="role" required>
-        <option value="User">Utente</option>
+        <option value="User">User</option>
         <option value="Admin">Admin</option>
       </select>
       <button type="submit">Registrati</button>
