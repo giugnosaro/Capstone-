@@ -88,7 +88,7 @@ export class AuthComponent implements AfterViewInit {
             this.nome = response.user.nome;
             this.email = response.user.email;
             this.role = response.user.role;
-            this.userService.setUser(response.user); // Utilizza correttamente il servizio
+            this.userService.setUser(response.user); 
             this.showSuccessToast('Accesso effettuato con successo!');
             this.router.navigate(['/home']);
           } else {
