@@ -1,0 +1,50 @@
+<form [formGroup]="prodottoForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nome">Nome:</label>
+      <input id="nome" formControlName="nome" type="text" />
+    </div>
+  
+    <div>
+      <label for="descrizione">Descrizione:</label>
+      <textarea id="descrizione" formControlName="descrizione"></textarea>
+    </div>
+  
+    <div>
+      <label for="prezzo">Prezzo:</label>
+      <input id="prezzo" formControlName="prezzo" type="text" />
+    </div>
+  
+    <div>
+      <label for="idCategoria">Categoria:</label>
+      <select id="idCategoria" formControlName="idCategoria">
+        <option *ngFor="let categoria of categorie" [value]="categoria.id">{{ categoria.nome }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="immagine">Immagine:</label>
+      <input
+        id="immagine"
+        type="file"
+        (change)="onFileSelected($event)"
+        accept="image/png, image/jpeg, image/jpg"
+      />
+    </div>
+  
+    <button type="submit" [disabled]="prodottoForm.invalid">Carica Prodotto</button>
+  </form>
+  
+  
+  <!-- Sezione per visualizzare i prodotti creati -->
+  <div *ngIf="prodotti.length > 0">
+    <h2>Prodotti Creati</h2>
+    <ul>
+      <li *ngFor="let prodotto of prodotti">
+        <p>Nome: {{ prodotto.nome }}, Descrizione: {{ prodotto.descrizione }}, Prezzo: {{ prodotto.prezzo }}, Categoria ID: {{ prodotto.idCategoria }}</p>
+        <img *ngIf="prodotto.immagine" [src]="'data:image/png;base64,' + prodotto.immagine" alt="Immagine del prodotto" style="width: 100px; height: auto;" />
+      </li>
+    </ul>
+  </div>
+  
+  
+  

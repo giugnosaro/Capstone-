@@ -10,10 +10,11 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { GaranzieComponent } from './home/garanzie/garanzie.component';
 import { CarouselgioielliComponent } from './home/carouselgioielli/carouselgioielli.component';
 import { AuthComponent } from './auth/auth.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './services/user.service';
+import { FormComponent } from './form/form.component';
 
 
 
@@ -27,6 +28,7 @@ import { UserService } from './services/user.service';
     GaranzieComponent,
     CarouselgioielliComponent,
     AuthComponent,
+    FormComponent,
 
   ],
   imports: [
@@ -36,6 +38,7 @@ import { UserService } from './services/user.service';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule, 
+    ReactiveFormsModule
     
   ],
   providers: [],
