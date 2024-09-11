@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/authservice/authservice.component';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,12 +12,20 @@ export class NavbarComponent implements OnInit {
   user: any = null;
   isAuthenticated: boolean = false;
   isProfileModalOpen: boolean = false;
+  isAdmin: boolean = false;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router , private authService: AuthService) {}
 
   ngOnInit(): void {
     this.user = this.userService.getUser();
     this.isAuthenticated = !!this.user; // Verifica se l'utente è autenticato
+    this.isAdmin = this.authService.getUserRole() === 'Admin';
+
+    const userRole = this.authService.getUserRole();
+    console.log('User Role retrieved from localStorage:', userRole);
+    this.isAdmin = userRole === 'Admin';
+    console.log('User role:', this.user.role);
+
   }
 
   openProfileModal() {
@@ -28,8 +37,10 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.authService.logout();
     this.userService.clearUser();
     this.isAuthenticated = false;
+    this.isAdmin = false;
     this.closeProfileModal();
     this.router.navigate(['/login']);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { AuthService } from '../service/authservice/auth.component';
+import { AuthService } from '../service/authservice/authservice.component';
 import { catchError, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';

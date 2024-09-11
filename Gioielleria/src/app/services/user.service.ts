@@ -1,4 +1,3 @@
-// src/app/services/user.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,7 +6,13 @@ import { Injectable } from '@angular/core';
 export class UserService {
   private user: any;
 
-  constructor() {}
+  constructor() {
+    // Inizializza l'utente dal localStorage all'avvio del servizio
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
+    }
+  }
 
   setUser(user: any) {
     this.user = user;
@@ -15,7 +20,14 @@ export class UserService {
   }
 
   getUser() {
-    return this.user ? this.user : JSON.parse(localStorage.getItem('user') || '{}');
+    // Recupera l'utente dal localStorage se non è già impostato
+    if (!this.user) {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        this.user = JSON.parse(storedUser);
+      }
+    }
+    return this.user;
   }
 
   clearUser() {

@@ -1,3 +1,53 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid justify-content-center">
+    <img src="../../../assets/immagini/logo-preview.png" alt="Logo">
+  </div>
+  <div class="container-fluid justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#">All</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ros Jewels</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Collezioni diamanti</a></li>
+          <li><a class="dropdown-item" href="#">Collezioni oro</a></li>
+          <li><a class="dropdown-item" href="#">Collezioni argento</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Love Jewels</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Anelli love</a></li>
+          <li><a class="dropdown-item" href="#">Bracciali love</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color: hotpink;">SUMMER VIBES</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Brand</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Disney</a></li>
+          <li><a class="dropdown-item" href="#">Recarlo</a></li>
+          <li><a class="dropdown-item" href="#">Pianegonda</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Anelli</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Orecchini</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Collane</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Bracciali</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Ciondoli</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Accessori</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Orologi</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">OUTLET</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
 <form [formGroup]="prodottoForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="nome">Nome:</label>
@@ -34,17 +84,73 @@
     <button type="submit" [disabled]="prodottoForm.invalid">Carica Prodotto</button>
   </form>
   
+  <footer class="footer-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 footer-brand">
+          <img src="../../../assets/immagini/logo-preview.png" alt="Ros Jewels Logo" class="footer-logo">
+          <div class="footer-social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 footer-links">
+          <h5>LA NOSTRA AZIENDA</h5>
+          <ul>
+            <li><a href="#">Chi siamo</a></li>
+            <li><a href="#">Lavora con noi</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-md-2 footer-links">
+          <h5>INFORMATIVA LEGALE</h5>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Termini & Condizioni</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 footer-links">
+          <h5>SERVIZI ONLINE</h5>
+          <ul>
+            <li><a href="#">Effettua un reso</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 newsletter-section">
+          <h5>NEWSLETTER</h5>
+          <form class="newsletter-form">
+            <input type="email" placeholder="La tua email" aria-label="La tua email">
+            <button type="submit">ISCRIVITI</button>
+          </form>
+          <div class="footer-social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+          <a href="#" class="shop-button">Segui su shop</a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12 text-center">
+          <p class="country-selection">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/800px-Flag_of_Italy.svg.png" alt="Italy Flag" style="width: 24px; height: auto;">
+            Italia (EUR €)
+          </p>
+          <p>Copyright © 2024, Ros Jewels. P.IVA 0009999000 | Tutti i diritti riservati</p>
+          <div class="payment-methods">
+            <img src="../../../assets/immagini/american_express_40x20.png" alt="Amex">
+            <img src="../../../assets/immagini/apple pay.png" alt="Apple Pay">
+            <img src="../../../assets/immagini/google_pay_40x20.png" alt="Google Pay">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
+                <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
+              </svg>
+            <img src="../../../assets/immagini/visa_40x20.png" alt="Visa">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   
-  <!-- Sezione per visualizzare i prodotti creati -->
-  <div *ngIf="prodotti.length > 0">
-    <h2>Prodotti Creati</h2>
-    <ul>
-      <li *ngFor="let prodotto of prodotti">
-        <p>Nome: {{ prodotto.nome }}, Descrizione: {{ prodotto.descrizione }}, Prezzo: {{ prodotto.prezzo }}, Categoria ID: {{ prodotto.idCategoria }}</p>
-        <img *ngIf="prodotto.immagine" [src]="'data:image/png;base64,' + prodotto.immagine" alt="Immagine del prodotto" style="width: 100px; height: auto;" />
-      </li>
-    </ul>
-  </div>
+  
   
   
   

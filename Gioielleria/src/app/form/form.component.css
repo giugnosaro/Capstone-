@@ -1,0 +1,388 @@
+.navbar-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Altezza del video */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Posiziona il video dietro agli altri elementi */
+  }
+  
+  .top-bar {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per la barra superiore */
+    color: f8f9fa;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+  .top-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .top-social-icons a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    background: transparent; /* Navbar trasparente per default */
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar img {
+    max-width: 150px; /* Imposta la larghezza massima dell'immagine */
+    height: auto;
+    margin-bottom: 10px; /* Spazio sotto l'immagine */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: gray;
+    margin: 0 10px;
+    text-align: center;
+    transition: color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar:hover {
+    background-color: white; /* Cambia l'intero background del navbar div a bianco su hover */
+  }
+  
+  .navbar:hover .nav-link {
+    color: black !important; /* Cambia il colore del testo a nero per contrastare con lo sfondo bianco */
+  }
+  
+  .navbar-nav .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo semi-trasparente per i menu dropdown */
+  }
+  
+  .navbar-nav .dropdown-item {
+    color: white;
+  }
+  
+  .navbar-nav .dropdown-item:hover {
+    color: black !important; /* Cambia il colore del testo a nero nel menu a discesa */
+    background-color: white; /* Cambia lo sfondo a bianco nel menu a discesa */
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link[style*="hotpink"] {
+    color: hotpink !important; /* Colore speciale per SUMMER VIBES */
+  }
+  
+  /* Stile per il pulsante "Utente" */
+.top-social-icons .btn-primary {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.top-social-icons .btn-primary:hover {
+  color: #ff4081; /* Colore di hover */
+}
+
+/* Stile per il modale */
+.modal.show {
+  display: block; /* Mostra il modale */
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro semitrasparente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  margin: 10% auto;
+  max-width: 500px; /* Larghezza del modale */
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: none;
+}
+
+.btn-secondary,
+.btn-danger {
+  background-color: #ff4081; /* Colore pulsante */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover,
+.btn-danger:hover {
+  background-color: #e6376d; /* Colore hover pulsante */
+}
+
+.close {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff4081;
+}
+
+
+
+
+
+
+
+
+/* Stile generale per il form */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stile per i container degli input */
+  form div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Stile per le label */
+  form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Stile per gli input e textarea */
+  form input[type="text"],
+  form textarea,
+  form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Stile per il file input */
+  form input[type="file"] {
+    padding: 5px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Stile per il pulsante di submit */
+  form button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Media query per schermi più piccoli */
+  @media (max-width: 600px) {
+    form {
+      padding: 15px;
+    }
+    form label, form input, form textarea, form select, form button {
+      font-size: 14px;
+    }
+  }
+  
+
+
+
+  .footer-container {
+    background-color: #f8f9fa;
+    padding: 10px 0; /* Ridotto il padding per rendere il footer più basso */
+    color: #333;
+  }
+  
+  .footer-logo {
+    max-width: 200px; /* Ridotto il logo */
+    margin-bottom: 10px; /* Ridotto il margine sotto il logo */
+  }
+  
+  .footer-social-icons a {
+    color: #333;
+    margin-right: 8px; /* Spaziatura ridotta tra le icone */
+    font-size: 16px; /* Ridotta la dimensione delle icone */
+  }
+  
+  .footer-links h5 {
+    font-weight: bold;
+    margin-bottom: 8px; /* Spaziatura ridotta */
+    font-size: 14px; /* Font ridotto per i titoli */
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 6px; /* Spaziatura ridotta tra gli elementi della lista */
+  }
+  
+  .footer-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px; /* Font ridotto per i link */
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .newsletter-section {
+    text-align: center; /* Allinea la sezione della newsletter a destra */
+  }
+  
+  .newsletter-section h5 {
+    font-weight: bold;
+    margin-bottom: 8px; /* Spaziatura ridotta */
+    font-size: 14px; /* Font ridotto */
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: flex-end; /* Allinea l'input e il bottone a destra */
+    margin-bottom: 10px; /* Spaziatura ridotta sotto la newsletter */
+  }
+  
+  .newsletter-form input {
+    border: 1px solid #ccc;
+    padding: 8px; /* Padding ridotto per l'input */
+    flex: 1;
+    border-radius: 3px 0 0 3px;
+    font-size: 14px; /* Font ridotto per l'input */
+  }
+  
+  .newsletter-form button {
+    padding: 8px; /* Padding ridotto per il bottone */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    font-size: 14px; /* Font ridotto per il bottone */
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #555;
+  }
+  
+  .shop-button {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 8px 15px; /* Padding ridotto per il bottone "Segui su shop" */
+    text-decoration: none;
+    border-radius: 20px; /* Leggero arrotondamento per un look più compatto */
+    font-size: 14px; /* Font ridotto */
+    margin-top: 8px; /* Spaziatura ridotta sopra il bottone */
+  }
+  
+  .shop-button:hover {
+    background-color: #554fcf;
+  }
+  
+  .country-selection {
+    margin-bottom: 8px; /* Spaziatura ridotta */
+    font-size: 14px; /* Font ridotto */
+  }
+  
+  .payment-methods img {
+    margin: 0 8px; /* Spaziatura ridotta tra i metodi di pagamento */
+    width: 40px; /* Dimensione ridotta delle icone di pagamento */
+    height: auto;
+  }
+  
+  .payment-methods img:last-child {
+    margin-right: 0;
+  }
+  

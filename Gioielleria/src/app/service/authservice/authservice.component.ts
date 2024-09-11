@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +12,7 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   private apiUrl = 'https://localhost:7296'; // Assicurati che questo sia l'URL corretto del tuo backend
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient , private userService: UserService) {}
 
   // Metodo per registrare un nuovo utente
   register(userData: { nome: string; email: string; password: string;  role: string}): Observable<any> {
@@ -21,10 +23,10 @@ export class AuthService {
   login(credentials: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
       tap((response: any) => {
-        // Salva il token nel localStorage
         if (response.token) {
           localStorage.setItem('authToken', response.token);
-          localStorage.setItem('userRole', response.role); // Salva il ruolo
+          localStorage.setItem('userRole', response.user.role); // Salva il ruolo
+          this.userService.setUser(response.user); // Salva l'utente completo nel UserService
         }
       })
     );
@@ -33,6 +35,10 @@ export class AuthService {
   // Metodo per verificare se l'utente è autenticato
   isAuthenticated(): boolean {
     return !!localStorage.getItem('authToken');
+  }
+  // Metodo per ottenere il ruolo dell'utente
+  getUserRole(): string | null {
+    return localStorage.getItem('userRole');
   }
 
   // Metodo per ottenere il token JWT
@@ -43,6 +49,8 @@ export class AuthService {
   // Metodo per effettuare il logout
   logout(): void {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('userRole'); // Rimuovi il ruolo al logout
+    this.userService.clearUser();
   }
 }
 
