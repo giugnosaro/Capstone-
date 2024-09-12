@@ -1,0 +1,240 @@
+.navbar-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Altezza del video */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Posiziona il video dietro agli altri elementi */
+  }
+  
+  .top-bar {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per la barra superiore */
+    color: f8f9fa;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+  .top-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .top-social-icons a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    background: transparent; /* Navbar trasparente per default */
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar img {
+    max-width: 150px; /* Imposta la larghezza massima dell'immagine */
+    height: auto;
+    margin-bottom: 10px; /* Spazio sotto l'immagine */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: gray;
+    margin: 0 10px;
+    text-align: center;
+    transition: color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar:hover {
+    background-color: white; /* Cambia l'intero background del navbar div a bianco su hover */
+  }
+  
+  .navbar:hover .nav-link {
+    color: black !important; /* Cambia il colore del testo a nero per contrastare con lo sfondo bianco */
+  }
+  
+  .navbar-nav .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo semi-trasparente per i menu dropdown */
+  }
+  
+  .navbar-nav .dropdown-item {
+    color: white;
+  }
+  
+  .navbar-nav .dropdown-item:hover {
+    color: black !important; /* Cambia il colore del testo a nero nel menu a discesa */
+    background-color: white; /* Cambia lo sfondo a bianco nel menu a discesa */
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link[style*="hotpink"] {
+    color: hotpink !important; /* Colore speciale per SUMMER VIBES */
+  }
+  
+  /* Stile per il pulsante "Utente" */
+.top-social-icons .btn-primary {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.top-social-icons .btn-primary:hover {
+  color: #ff4081; /* Colore di hover */
+}
+
+/* Stile per il modale */
+.modal.show {
+  display: block; /* Mostra il modale */
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro semitrasparente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  margin: 10% auto;
+  max-width: 500px; /* Larghezza del modale */
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: none;
+}
+
+.btn-secondary,
+.btn-danger {
+  background-color: #ff4081; /* Colore pulsante */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover,
+.btn-danger:hover {
+  background-color: #e6376d; /* Colore hover pulsante */
+}
+
+.close {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff4081;
+}
+
+
+
+
+
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .img-fixed {
+    width: 100%; /* Riempie tutta la larghezza della card */
+    height: 300px; /* Altezza fissa predefinita per desktop e laptop */
+    object-fit: cover; /* Mantiene le proporzioni dell'immagine ritagliandola per adattarla alla dimensione */
+}
+
+.text-center-custom {
+    display: flex;
+    justify-content: center; /* Centra l'elemento orizzontalmente */
+    align-items: center; /* Centra l'elemento verticalmente (se applicabile) */
+}
+
+
+@media (max-width: 992px) { /* Per tablet */
+    .img-fixed {
+        height: 250px; /* Riduce l'altezza per tablet */
+    }
+}
+
+@media (max-width: 768px) { /* Per dispositivi mobile */
+    .img-fixed {
+        height: 200px; /* Riduce ulteriormente l'altezza per dispositivi mobili */
+    }
+}
+
+
+

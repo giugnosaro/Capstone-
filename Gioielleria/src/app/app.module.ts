@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './services/user.service';
 import { FormComponent } from './form/form.component';
+import { AllComponent } from './Jewels/all/all.component';
 
 
 
@@ -29,6 +30,7 @@ import { FormComponent } from './form/form.component';
     CarouselgioielliComponent,
     AuthComponent,
     FormComponent,
+    AllComponent,
 
   ],
   imports: [
