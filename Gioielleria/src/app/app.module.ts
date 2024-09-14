@@ -16,6 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './services/user.service';
 import { FormComponent } from './form/form.component';
 import { AllComponent } from './Jewels/all/all.component';
+import { AnelliComponent } from './Jewels/anelli/anelli.component';
+import { OrecchiniComponent } from './Jewels/orecchini/orecchini.component';
+import { CollaneComponent } from './Jewels/collane/collane.component';
+import { BraccialiComponent } from './Jewels/bracciali/bracciali.component';
+import { CiondoliComponent } from './Jewels/ciondoli/ciondoli.component';
+import { AccessoriComponent } from './Jewels/accessori/accessori.component';
+import { OrologiComponent } from './Jewels/orologi/orologi.component';
 
 
 
@@ -31,6 +38,13 @@ import { AllComponent } from './Jewels/all/all.component';
     AuthComponent,
     FormComponent,
     AllComponent,
+    AnelliComponent,
+    OrecchiniComponent,
+    CollaneComponent,
+    BraccialiComponent,
+    CiondoliComponent,
+    AccessoriComponent,
+    OrologiComponent,
 
   ],
   imports: [

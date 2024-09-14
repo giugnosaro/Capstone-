@@ -8,6 +8,7 @@ import { catchError, Observable, throwError, tap } from 'rxjs';
 export class ProdottiService {
   private baseUrl = 'https://localhost:7296/api/Prodotti';
   private categorieUrl = 'https://localhost:7296/api/Prodotti/categorie';
+  private byCategoriaUrl = 'https://localhost:7296/api/Prodotti/byCategoria';
 
   constructor(private http: HttpClient) {}
 
@@ -42,4 +43,8 @@ export class ProdottiService {
     return this.http.post(this.baseUrl, formData);
   }
   
+  getProdottiByCategoria(idCategoria: number): Observable<any> {
+    return this.http.get(`${this.byCategoriaUrl}?idCategoria=${idCategoria}`);
+  
+}
 }
