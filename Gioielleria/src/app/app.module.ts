@@ -24,6 +24,8 @@ import { CiondoliComponent } from './Jewels/ciondoli/ciondoli.component';
 import { AccessoriComponent } from './Jewels/accessori/accessori.component';
 import { OrologiComponent } from './Jewels/orologi/orologi.component';
 import { ChiSiamoComponent } from './info/chiSiamo/chiSiamo.component';
+import { ScrollAnimationDirective } from './scroll-animation.directive';
+import { GsapAnimationDirective } from './gsap-animation.directive';
 
 
 
@@ -47,6 +49,8 @@ import { ChiSiamoComponent } from './info/chiSiamo/chiSiamo.component';
     AccessoriComponent,
     OrologiComponent,
     ChiSiamoComponent,
+    ScrollAnimationDirective,
+    GsapAnimationDirective,
 
   ],
   imports: [
