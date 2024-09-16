@@ -11,6 +11,7 @@ import { BraccialiComponent } from './Jewels/bracciali/bracciali.component';
 import { CiondoliComponent } from './Jewels/ciondoli/ciondoli.component';
 import { AccessoriComponent } from './Jewels/accessori/accessori.component';
 import { OrologiComponent } from './Jewels/orologi/orologi.component';
+import { ChiSiamoComponent } from './info/chiSiamo/chiSiamo.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'ciondoli', component: CiondoliComponent},
   {path: 'accessori', component: AccessoriComponent},
   {path: 'orologi', component: OrologiComponent},
+  {path: 'chisiamo', component: ChiSiamoComponent},
   {path: '', redirectTo: '/auth', pathMatch: 'full'},
 
 ];

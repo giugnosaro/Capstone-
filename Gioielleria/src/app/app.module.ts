@@ -23,6 +23,7 @@ import { BraccialiComponent } from './Jewels/bracciali/bracciali.component';
 import { CiondoliComponent } from './Jewels/ciondoli/ciondoli.component';
 import { AccessoriComponent } from './Jewels/accessori/accessori.component';
 import { OrologiComponent } from './Jewels/orologi/orologi.component';
+import { ChiSiamoComponent } from './info/chiSiamo/chiSiamo.component';
 
 
 
@@ -45,6 +46,7 @@ import { OrologiComponent } from './Jewels/orologi/orologi.component';
     CiondoliComponent,
     AccessoriComponent,
     OrologiComponent,
+    ChiSiamoComponent,
 
   ],
   imports: [
