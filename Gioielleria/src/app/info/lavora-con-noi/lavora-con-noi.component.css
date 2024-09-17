@@ -1,0 +1,203 @@
+.navbar-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Altezza del video */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Posiziona il video dietro agli altri elementi */
+  }
+  
+  .top-bar {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per la barra superiore */
+    color: f8f9fa;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+  .top-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .top-social-icons a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    background: transparent; /* Navbar trasparente per default */
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar img {
+    max-width: 150px; /* Imposta la larghezza massima dell'immagine */
+    height: auto;
+    margin-bottom: 10px; /* Spazio sotto l'immagine */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: gray;
+    margin: 0 10px;
+    text-align: center;
+    transition: color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar:hover {
+    background-color: white; /* Cambia l'intero background del navbar div a bianco su hover */
+  }
+  
+  .navbar:hover .nav-link {
+    color: black !important; /* Cambia il colore del testo a nero per contrastare con lo sfondo bianco */
+  }
+  
+  .navbar-nav .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo semi-trasparente per i menu dropdown */
+  }
+  
+  .navbar-nav .dropdown-item {
+    color: white;
+  }
+  
+  .navbar-nav .dropdown-item:hover {
+    color: black !important; /* Cambia il colore del testo a nero nel menu a discesa */
+    background-color: white; /* Cambia lo sfondo a bianco nel menu a discesa */
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link[style*="hotpink"] {
+    color: hotpink !important; /* Colore speciale per SUMMER VIBES */
+  }
+
+
+/* Contenitore principale per centrare il form */
+.form-wrapper {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Imposta l'altezza minima per l'intera finestra */
+    padding: 20px; /* Padding opzionale per spazio intorno al form */
+    box-sizing: border-box;
+}
+
+/* Contenitore del form */
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Larghezza massima del form */
+    width: 100%; /* Larghezza completa fino al massimo */
+    box-sizing: border-box;
+}
+
+/* Stili per il titolo */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Stili per i gruppi di input */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Disposizione verticale degli elementi interni */
+    width: 100%;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Stili per gli input di testo e textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Stili per l'input del file */
+.file-group label,
+.file-group input[type="file"],
+.file-group small {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px; /* Spazio tra gli elementi */
+}
+
+/* Stili per il textarea */
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Stili per il gruppo di checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+/* Stili per il pulsante di invio */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d9b3b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Stile per il pulsante di invio al passaggio del mouse */
+button:hover {
+    background-color: #b38585;
+}
+
+
+
+
+
+

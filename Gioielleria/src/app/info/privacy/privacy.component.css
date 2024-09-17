@@ -1,0 +1,151 @@
+/* Stili per il contenitore principale */
+.privacy-policy-container {
+    max-width: 800px; /* Larghezza massima del contenitore */
+    margin: 0 auto; /* Centra il contenitore orizzontalmente */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Stili per i titoli */
+.privacy-policy-container h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.privacy-policy-container h2 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Stili per i paragrafi */
+.privacy-policy-container p {
+    margin-bottom: 10px;
+}
+
+/* Stili per le liste */
+.privacy-policy-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Stili per gli indirizzi */
+.privacy-policy-container address {
+    font-style: normal;
+    margin-top: 10px;
+}
+
+/* Stili per i link */
+.privacy-policy-container a {
+    color: #d9b3b3;
+    text-decoration: none;
+}
+
+.privacy-policy-container a:hover {
+    text-decoration: underline;
+}
+
+
+
+.navbar-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Altezza del video */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Posiziona il video dietro agli altri elementi */
+  }
+  
+  .top-bar {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente per la barra superiore */
+    color: f8f9fa;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+  .top-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .top-social-icons a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    background: transparent; /* Navbar trasparente per default */
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar img {
+    max-width: 150px; /* Imposta la larghezza massima dell'immagine */
+    height: auto;
+    margin-bottom: 10px; /* Spazio sotto l'immagine */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: gray;
+    margin: 0 10px;
+    text-align: center;
+    transition: color 0.3s ease; /* Transizione graduale per l'effetto hover */
+  }
+  
+  .navbar:hover {
+    background-color: white; /* Cambia l'intero background del navbar div a bianco su hover */
+  }
+  
+  .navbar:hover .nav-link {
+    color: black !important; /* Cambia il colore del testo a nero per contrastare con lo sfondo bianco */
+  }
+  
+  .navbar-nav .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo semi-trasparente per i menu dropdown */
+  }
+  
+  .navbar-nav .dropdown-item {
+    color: white;
+  }
+  
+  .navbar-nav .dropdown-item:hover {
+    color: black !important; /* Cambia il colore del testo a nero nel menu a discesa */
+    background-color: white; /* Cambia lo sfondo a bianco nel menu a discesa */
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link[style*="hotpink"] {
+    color: hotpink !important; /* Colore speciale per SUMMER VIBES */
+  }

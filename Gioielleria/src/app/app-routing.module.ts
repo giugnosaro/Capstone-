@@ -12,6 +12,11 @@ import { CiondoliComponent } from './Jewels/ciondoli/ciondoli.component';
 import { AccessoriComponent } from './Jewels/accessori/accessori.component';
 import { OrologiComponent } from './Jewels/orologi/orologi.component';
 import { ChiSiamoComponent } from './info/chiSiamo/chiSiamo.component';
+import { LavoraConNoiComponent } from './info/lavora-con-noi/lavora-con-noi.component';
+import { PrivacyComponent } from './info/privacy/privacy.component';
+import { CondizioniComponent } from './info/condizioni/condizioni.component';
+import { ResoComponent } from './info/reso/reso.component';
+import { FaqComponent } from './info/faq/faq.component';
 
 const routes: Routes = [
 
@@ -27,6 +32,11 @@ const routes: Routes = [
   {path: 'accessori', component: AccessoriComponent},
   {path: 'orologi', component: OrologiComponent},
   {path: 'chisiamo', component: ChiSiamoComponent},
+  {path: 'lavoraconnoi', component: LavoraConNoiComponent},
+  {path: 'privacy', component: PrivacyComponent},
+  {path: 'condizioni', component: CondizioniComponent},
+  {path: 'reso', component: ResoComponent},
+  {path: 'faq', component: FaqComponent},
   {path: '', redirectTo: '/auth', pathMatch: 'full'},
 
 ];

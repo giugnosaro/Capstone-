@@ -26,6 +26,11 @@ import { OrologiComponent } from './Jewels/orologi/orologi.component';
 import { ChiSiamoComponent } from './info/chiSiamo/chiSiamo.component';
 import { ScrollAnimationDirective } from './scroll-animation.directive';
 import { GsapAnimationDirective } from './gsap-animation.directive';
+import { LavoraConNoiComponent } from './info/lavora-con-noi/lavora-con-noi.component';
+import { PrivacyComponent } from './info/privacy/privacy.component';
+import { CondizioniComponent } from './info/condizioni/condizioni.component';
+import { ResoComponent } from './info/reso/reso.component';
+import { FaqComponent } from './info/faq/faq.component';
 
 
 
@@ -51,6 +56,11 @@ import { GsapAnimationDirective } from './gsap-animation.directive';
     ChiSiamoComponent,
     ScrollAnimationDirective,
     GsapAnimationDirective,
+    LavoraConNoiComponent,
+    PrivacyComponent,
+    CondizioniComponent,
+    ResoComponent,
+    FaqComponent,
 
   ],
   imports: [
