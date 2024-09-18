@@ -52,7 +52,7 @@
                     <h5 class="card-title text-center">{{ prodotto.nome }}</h5>
                     <p class="card-text text-center">{{ prodotto.descrizione }}</p>
                     <div class="d-flex justify-content-center">
-                        <button class="btn btn-primary font-weight-bold">{{ prodotto.prezzo }}€</button>
+                        <button class="btn btn-primary font-weight-bold" (click)="addToCart(prodotto)">{{ prodotto.prezzo }}€</button>
                     </div>
                 </div>
             </div>

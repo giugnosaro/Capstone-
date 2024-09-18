@@ -1,0 +1,10 @@
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto; /* Aggiunge uno scroll se ci sono troppi elementi nel carrello */
+  }
+  
+  .modal-footer .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  

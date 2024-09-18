@@ -17,6 +17,7 @@ import { PrivacyComponent } from './info/privacy/privacy.component';
 import { CondizioniComponent } from './info/condizioni/condizioni.component';
 import { ResoComponent } from './info/reso/reso.component';
 import { FaqComponent } from './info/faq/faq.component';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path: 'condizioni', component: CondizioniComponent},
   {path: 'reso', component: ResoComponent},
   {path: 'faq', component: FaqComponent},
+  {path: 'checkout', component: CheckoutComponent},
   {path: '', redirectTo: '/auth', pathMatch: 'full'},
 
 ];

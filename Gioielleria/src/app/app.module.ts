@@ -31,6 +31,8 @@ import { PrivacyComponent } from './info/privacy/privacy.component';
 import { CondizioniComponent } from './info/condizioni/condizioni.component';
 import { ResoComponent } from './info/reso/reso.component';
 import { FaqComponent } from './info/faq/faq.component';
+import { CarelloComponent } from './cart/carello/carello.component';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
 
 
 
@@ -61,6 +63,8 @@ import { FaqComponent } from './info/faq/faq.component';
     CondizioniComponent,
     ResoComponent,
     FaqComponent,
+    CarelloComponent,
+    CheckoutComponent,
 
   ],
   imports: [

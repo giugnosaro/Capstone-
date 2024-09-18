@@ -1,0 +1,25 @@
+<!-- Modale Bootstrap -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrello</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li *ngFor="let item of cartItems">
+              {{ item.quantity }} x {{ item.nome }} - {{ item.prezzo }}€
+              <button (click)="removeItem(item.id)" class="btn btn-danger">Rimuovi</button>
+            </li>
+          </ul>
+          <h3>Totale: {{ totalAmount }}€</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <button type="button" class="btn btn-success">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

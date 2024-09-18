@@ -1,3 +1,35 @@
+<!-- Modale Bootstrap migliorato e centrato -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"> <!-- Classe per centrare il modale -->
+    <div class="modal-content" style="border-radius: 15px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);">
+      <div class="modal-header" style="border-bottom: none;">
+        <h5 class="modal-title" id="cartModalLabel" style="font-weight: bold; color: #333;">
+          🛒 Carrello
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 20px;">
+        <ul style="list-style: none; padding-left: 0;">
+          <li *ngFor="let item of cartItems" style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 16px;">{{ item.quantity }} x {{ item.nome }} - {{ item.prezzo }}€</span>
+            <button (click)="removeItem(item.id)" class="btn btn-outline-danger btn-sm" style="border-radius: 12px;">Rimuovi</button>
+          </li>
+        </ul>
+        <h3 style="font-size: 22px; font-weight: bold; color: #333;">Totale: {{ totalAmount }}€</h3>
+      </div>
+      <div class="modal-footer" style="border-top: none; justify-content: space-between;">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="background-color: #ff4d4d; border-radius: 12px; padding: 10px 20px;">Chiudi</button>
+        <button type="button" class="btn btn-success" (click)="goToCheckout()" style="background-color: #28a745; border-radius: 12px; padding: 10px 20px;">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <div class="navbar-container">
   <video autoplay muted loop id="background-video">
     <source src="../../../assets/Video/Video NavBar.mp4" type="video/mp4">
@@ -18,7 +50,12 @@
         <a href="#"><i class="bi bi-instagram"></i></a>
         <a *ngIf="!isAuthenticated" [routerLink]="['/auth']"><i class="bi bi-person"></i></a>
         <a *ngIf="isAuthenticated" (click)="openProfileModal()" class="bi bi-person"></a>
-        <a href="#"><i class="bi bi-bag"></i></a>
+        <!-- Icona del carrello con il badge rosso per il numero di prodotti -->
+<a href="javascript:void(0)" (click)="openCartModal()" class="cart-icon">
+  <i class="bi bi-bag"></i>
+  <span *ngIf="cartItems.length > 0" class="badge">{{ cartItems.length }}</span>
+</a>
+
       </div>
     </div>
   </div>

@@ -1,0 +1,226 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid justify-content-center">
+      <img src="../../../assets/immagini/logo-preview.png" alt="Logo">
+    </div>
+    <div class="container-fluid justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/all']">All</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ros Jewels</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Collezioni diamanti</a></li>
+            <li><a class="dropdown-item" href="#">Collezioni oro</a></li>
+            <li><a class="dropdown-item" href="#">Collezioni argento</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Love Jewels</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Anelli love</a></li>
+            <li><a class="dropdown-item" href="#">Bracciali love</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#" style="color: hotpink;">SUMMER VIBES</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Brand</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Disney</a></li>
+            <li><a class="dropdown-item" href="#">Recarlo</a></li>
+            <li><a class="dropdown-item" href="#">Pianegonda</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/anelli']">Anelli</a></li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/orecchini']">Orecchini</a></li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/collane']">Collane</a></li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/bracciali']">Bracciali</a></li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/ciondoli']">Ciondoli</a></li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/accessori']">Accessori</a></li>
+        <li class="nav-item"><a class="nav-link"[routerLink]="['/orologi']">Orologi</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <!-- Colonna sinistra: Sezione Contatti e Consegna + Pagamento -->
+      <div class="col-lg-5 mb-4"> <!-- Lasciato invariato -->
+        <!-- Sezione Contatti e Consegna -->
+        <div class="card p-4 mb-4">
+          <h4>Contatti</h4>
+          <div class="form-group">
+            <label for="email">Email o numero di telefono cellulare</label>
+            <input type="email" class="form-control" id="email" placeholder="Inserisci la tua email o numero di telefono">
+          </div>
+  
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" value="" id="newsletterCheck">
+            <label class="form-check-label" for="newsletterCheck">
+              Inviami email con notizie e offerte
+            </label>
+          </div>
+  
+          <hr>
+  
+          <h4>Consegna</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="shippingOption" id="shipping" checked>
+            <label class="form-check-label" for="shipping">
+              Spedizione (Confezione + Shopper in omaggio)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="shippingOption" id="pickup">
+            <label class="form-check-label" for="pickup">
+              Ritiro in negozio
+            </label>
+          </div>
+  
+          <!-- Form per la consegna -->
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label for="firstName">Nome</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Nome">
+            </div>
+            <div class="col-md-6">
+              <label for="lastName">Cognome</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Cognome">
+            </div>
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="company">Nome Azienda o altre informazioni (Facoltativo)</label>
+            <input type="text" class="form-control" id="company" placeholder="Nome Azienda">
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="address">Indirizzo</label>
+            <input type="text" class="form-control" id="address" placeholder="Indirizzo">
+          </div>
+  
+          <div class="row mt-3">
+            <div class="col-md-4">
+              <label for="cap">CAP</label>
+              <input type="text" class="form-control" id="cap" placeholder="CAP">
+            </div>
+            <div class="col-md-4">
+              <label for="city">Città</label>
+              <input type="text" class="form-control" id="city" placeholder="Città">
+            </div>
+            <div class="col-md-4">
+              <label for="province">Provincia</label>
+              <select class="form-control" id="province">
+                <option>Catania</option>
+                <!-- Aggiungi altre opzioni di provincia qui -->
+              </select>
+            </div>
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="phone">Telefono (obbligatorio)</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Telefono">
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="taxCode">P.IVA o Codice Fiscale</label>
+            <input type="text" class="form-control" id="taxCode" placeholder="P.IVA o Codice Fiscale">
+          </div>
+        </div> <!-- Fine card colonna Contatti e Consegna -->
+  
+        <!-- Sezione Pagamento -->
+        <div class="card p-4">
+          <h4>Pagamento</h4>
+          <p class="text-muted">Tutte le transazioni sono sicure e criptate.</p>
+  
+          <!-- Sezione Metodo di pagamento -->
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="paymentOption" id="creditCard" checked>
+            <label class="form-check-label" for="creditCard">
+              Carta di credito
+            </label>
+            <!-- Icone delle carte di credito -->
+            <div class="mt-2">
+              <img src="https://via.placeholder.com/30" alt="Visa" class="me-2">
+              <img src="https://via.placeholder.com/30" alt="Mastercard" class="me-2">
+              <img src="https://via.placeholder.com/30" alt="Maestro" class="me-2">
+              <img src="https://via.placeholder.com/30" alt="American Express">
+            </div>
+          </div>
+  
+          <!-- Dati carta di credito -->
+          <div class="form-group">
+            <label for="cardNumber">Numero carta</label>
+            <input type="text" class="form-control" id="cardNumber" placeholder="Numero carta">
+          </div>
+  
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label for="expiryDate">Data di scadenza (MM/AA)</label>
+              <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA">
+            </div>
+            <div class="col-md-6">
+              <label for="securityCode">Codice di sicurezza</label>
+              <input type="text" class="form-control" id="securityCode" placeholder="CVV">
+            </div>
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="cardName">Nome sulla carta</label>
+            <input type="text" class="form-control" id="cardName" placeholder="Nome sulla carta">
+          </div>
+  
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" id="useShippingAddress">
+            <label class="form-check-label" for="useShippingAddress">
+              Usa l'indirizzo di spedizione come indirizzo di fatturazione
+            </label>
+          </div>
+        </div> <!-- Fine card colonna Pagamento -->
+      </div>
+  
+      <!-- Colonna destra: Riepilogo ordine (allargato a col-lg-7) -->
+      <div class="col-lg-7"> <!-- Cambiato a col-lg-7 per allargare -->
+        <div class="card p-4">
+          <h5 class="card-title">Riepilogo Ordine</h5>
+          <hr>
+  
+          <!-- Loop dinamico sugli articoli del carrello con immagine del prodotto -->
+          <div *ngFor="let item of cartItems" class="d-flex justify-content-between mb-3">
+            <span>{{ item.nome }}</span>
+            <span>{{ item.prezzo }} €</span>
+            <small>Quantità: {{ item.quantity }}</small>
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="discountCode">Codice sconto</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="discountCode" placeholder="Codice sconto">
+              <button class="btn btn-outline-secondary" type="button" id="applyDiscount">Applica</button>
+            </div>
+          </div>
+  
+          <hr>
+  
+          <div class="d-flex justify-content-between">
+            <span>Subtotal</span>
+            <span>{{ totalAmount }} €</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span>Spedizione</span>
+            <span>Inserisci indirizzo di spedizione</span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <h5>Totale</h5>
+            <h5>{{ totalAmount }} €</h5>
+          </div>
+        </div> <!-- Fine card colonna Riepilogo -->
+      </div>
+    </div>
+  
+    <!-- Pulsante Paga -->
+    <div class="text-center mt-4">
+      <button class="btn paga">Paga ora</button>
+    </div>
+  </div>
+  

@@ -197,3 +197,99 @@
   color: #ff4081;
 }
 
+
+/* Stile del contenuto del modale */
+.modal-content {
+  background-color: seashell;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Rimozione dei bordi nella header e nella footer del modale */
+.modal-header, .modal-footer {
+  border: none;
+}
+
+/* Stile del titolo del modale */
+.modal-title {
+  font-weight: bold;
+  font-size: 22px;
+  color: #333;
+}
+
+/* Stile di base per i pulsanti: testo colorato e bordo, sfondo trasparente */
+.modal-footer .btn {
+  border-radius: 12px;
+  padding: 10px 20px;
+  background-color: transparent; /* Sfondo trasparente di default */
+  border: 2px solid;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transizione per l'effetto hover */
+}
+
+/* Stile per il pulsante Checkout (senza colore di sfondo) */
+.modal-footer .btn-success {
+  color: #28a745; /* Colore del testo verde */
+  border-color: #28a745; /* Bordo verde */
+  background-color: transparent !important; /* Sfondo trasparente */
+}
+
+.modal-footer .btn-success:hover {
+  background-color: #28a745 !important ; /* Sfondo verde in hover */
+  color: white; /* Testo bianco in hover */
+}
+
+/* Stile per il pulsante Chiudi (senza colore di sfondo) */
+.modal-footer .btn-danger {
+  color: #ff4d4d; /* Colore del testo rosso */
+  border-color: #ff4d4d; /* Bordo rosso */
+  background-color: transparent !important; /* Sfondo trasparente */
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: #ff4d4d !important ; /* Sfondo rosso in hover */
+  color: white; /* Testo bianco in hover */
+}
+
+/* Rimozione dello stile di default per la lista del carrello */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Migliore allineamento e spaziatura per gli articoli del carrello */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Assicura che il modale sia centrato */
+.modal-dialog {
+  margin: auto;
+}
+
+/* Stile per l'icona del carrello (posizionamento del badge) */
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+/* Stile per il badge rosso sopra l'icona del carrello */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
