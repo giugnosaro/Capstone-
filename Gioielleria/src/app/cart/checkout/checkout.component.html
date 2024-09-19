@@ -40,17 +40,16 @@
     </div>
   </nav>
 
-
   <div class="container">
     <div class="row">
       <!-- Colonna sinistra: Sezione Contatti e Consegna + Pagamento -->
-      <div class="col-lg-5 mb-4"> <!-- Lasciato invariato -->
+      <div class="col-lg-5 mb-4">
         <!-- Sezione Contatti e Consegna -->
         <div class="card p-4 mb-4">
           <h4>Contatti</h4>
           <div class="form-group">
             <label for="email">Email o numero di telefono cellulare</label>
-            <input type="email" class="form-control" id="email" placeholder="Inserisci la tua email o numero di telefono">
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" placeholder="Inserisci la tua email">
           </div>
   
           <div class="form-check mt-3">
@@ -94,8 +93,8 @@
           </div>
   
           <div class="form-group mt-3">
-            <label for="address">Indirizzo</label>
-            <input type="text" class="form-control" id="address" placeholder="Indirizzo">
+            <label for="address">Indirizzo di spedizione</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="address" placeholder="Inserisci il tuo indirizzo">
           </div>
   
           <div class="row mt-3">
@@ -134,16 +133,16 @@
   
           <!-- Sezione Metodo di pagamento -->
           <div class="form-check mb-3">
-            <input class="form-check-input" type="radio" name="paymentOption" id="creditCard" checked>
+            <input class="form-check-input" type="radio" name="paymentOption" [(ngModel)]="paymentMethod" value="Carta di credito" id="creditCard" checked>
             <label class="form-check-label" for="creditCard">
               Carta di credito
             </label>
             <!-- Icone delle carte di credito -->
             <div class="mt-2">
-              <img src="https://via.placeholder.com/30" alt="Visa" class="me-2">
-              <img src="https://via.placeholder.com/30" alt="Mastercard" class="me-2">
-              <img src="https://via.placeholder.com/30" alt="Maestro" class="me-2">
-              <img src="https://via.placeholder.com/30" alt="American Express">
+              <img src="../../../assets/immagini/checkout/visa.sxIq5Dot.jpeg" alt="Visa" class="me-2">
+              <img src="../../../assets/immagini/checkout/mastercard.1c4_lyMp.jpeg" alt="Mastercard" class="me-2">
+              <img src="../../../assets/immagini/checkout/maestro.ByfUQi1c.jpeg" alt="Maestro" class="me-2">
+              <img src="../../../assets/immagini/checkout/amex.Csr7hRoy.jpeg" alt="American Express">
             </div>
           </div>
   
@@ -179,7 +178,7 @@
       </div>
   
       <!-- Colonna destra: Riepilogo ordine (allargato a col-lg-7) -->
-      <div class="col-lg-7"> <!-- Cambiato a col-lg-7 per allargare -->
+      <div class="col-lg-7">
         <div class="card p-4">
           <h5 class="card-title">Riepilogo Ordine</h5>
           <hr>
@@ -220,7 +219,8 @@
   
     <!-- Pulsante Paga -->
     <div class="text-center mt-4">
-      <button class="btn paga">Paga ora</button>
+      <button (click)="submitOrder()" class="btn paga">Paga ora</button>
     </div>
-  </div>
+</div>
+
   
