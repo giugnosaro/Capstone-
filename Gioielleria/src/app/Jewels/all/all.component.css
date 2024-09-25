@@ -224,6 +224,12 @@
 }
 
 
+.btn {
+  border: none;
+    padding: 7px 80px;
+    background: #FF69B4;
+}
+
 @media (max-width: 992px) { /* Per tablet */
     .img-fixed {
         height: 250px; /* Riduce l'altezza per tablet */
